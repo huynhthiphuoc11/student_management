@@ -1,7 +1,8 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Drawable thứ nhất: Ảnh orange -->
-    <item android:drawable="@drawable/orange" />
+    <item android:drawable="@drawable/anhnen" />
 
-    <!-- Drawable thứ hai: Ảnh bottom -->
-    <item android:drawable="@drawable/bottom" />
+    <!-- Drawable thứ hai: Phần góc bo tròn -->
+    <item android:drawable="@drawable/bottom"
+        android:bottom="0dp" />
 </layer-list>
