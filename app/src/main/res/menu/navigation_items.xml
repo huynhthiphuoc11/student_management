@@ -4,6 +4,7 @@
      <item android:id="@+id/homeId"
          android:icon="@drawable/trangchu"
          android:title="Trang chủ"
+
          />
     <item android:id="@+id/studyId"
         android:icon="@drawable/book"
