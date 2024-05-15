@@ -29,9 +29,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         var bot=findViewById<BottomNavigationView>(R.id.bottom_nav)
-
         bot.setOnNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
+           when (menuItem.itemId) {
                 R.id.homeId -> {
                     replaceFragment(BottomNavigation())
                     return@setOnNavigationItemSelectedListener true

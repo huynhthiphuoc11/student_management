@@ -8,16 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 
 class RecycleAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var major = arrayOf("Ngữ văn", "Toán", "Vật lý", "Hóa", "Sinh")
-    private var mark1 = arrayOf("9", "9", "9", "9", "9")
-    private var mark2 = arrayOf("9", "9", "9", "9", "9")
-    private var mark3 = arrayOf("9", "9", "9", "9", "9")
-    private var mark4 = arrayOf("9", "9", "9", "9", "9")
-    private var mark5 = arrayOf("9", "9", "9", "9", "9")
-    private var gkmark = arrayOf("9", "9", "9", "9", "9")
-    private var ckmark = arrayOf("9", "9", "9", "9", "9")
-    private var tbmmark = arrayOf("9", "9", "9", "9", "9")
-    private var feaback = arrayOf("tốt", "tốt", "tốt", "tốt", "tốt")
+    private var major = arrayOf("Toán học", "Vật lý","Hóa học","Sinh Học", "Tin học","Ngữ Văn","Lịch sử","Địa lí","Ngoại ngữ","GDCD","Công nghệ","Môn tự chọn","GDQP")
+    private var mark1 = arrayOf("9", "9", "9", "9", "9","9","9","9","9","9","9","9","9")
+    private var mark2 = arrayOf("9", "9", "9", "9", "9","9","9","9","9","9","9","9","9")
+    private var mark3 = arrayOf("9", "9", "9", "9", "9","9","9","9","9","9","9","9","9")
+    private var mark4 = arrayOf("9", "9", "9", "9", "9","9","9","9","9","9","9","9","9")
+    private var mark5 = arrayOf("9", "9", "9", "9", "9","9","9","9","9","9","9","9","9")
+    private var gkmark = arrayOf("9", "9", "9", "9", "9","9","9","9","9","9","9","9","9")
+    private var ckmark = arrayOf("9", "9", "9", "9", "9","9","9","9","9","9","9","9","9")
+    private var tbmmark = arrayOf("9", "9", "9", "9", "9","9","9","9","9","9","9","9","9")
+    private var feaback = arrayOf("tốt", "tốt", "tốt", "tốt", "tốt","tốt", "tốt", "tốt", "tốt", "tốt","tốt", "tốt", "tốt")
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

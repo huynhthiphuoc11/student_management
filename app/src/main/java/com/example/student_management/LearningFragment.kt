@@ -23,7 +23,7 @@ class LearningFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val dataList = listOf("Ngữ Văn", "Toán", "Vật Lý", "Hóa Học", "Sinh Học")
+        val dataList = listOf("Toán học", "Vật lý","Hóa học","Sinh Học", "Tin học","Ngữ Văn","Lịch sử","Địa lí","Ngoại ngữ","GDCD","Công nghệ","Môn tự chọn","GDQP")
         adapter = MajorAdapter(dataList)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter

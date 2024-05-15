@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
             android:paddingLeft="80dp"
-            android:text="Huỳnh Thị Phước"
+            android:text="Đặng Công Nhật"
             android:textSize="18dp"
             android:textStyle="bold" />
 

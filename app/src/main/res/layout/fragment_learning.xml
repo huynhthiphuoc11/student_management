@@ -34,7 +34,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="302dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/white"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
