@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="93dp"
-        android:background="#F44336"
+        android:background="#2196F3"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -68,21 +68,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:paddingLeft="10dp"
-                android:text="2022-2023|7C"
+                android:text="2023-2024|7C"
                 android:textSize="17dp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
+            >
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+            </View>
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="95dp"
-                android:layout_marginTop="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
 
-                android:background="@drawable/muitentron24" />
+                android:background="@drawable/bluearrow25" />
 
         </LinearLayout>
     </LinearLayout>
@@ -133,9 +140,9 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/usersetting" />
+                android:src="@drawable/userblue25" />
 
             <TextView
                 android:id="@+id/tvlearn"
@@ -150,7 +157,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/muitentron26" />
+                android:background="@drawable/arrowblue25" />
 
         </LinearLayout>
 
@@ -164,7 +171,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/khoa26" />
+            android:src="@drawable/key24" />
 
         <TextView
             android:id="@+id/tvpass"
@@ -179,7 +186,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/muitentron26" />
+            android:background="@drawable/arrowblue25" />
 
     </LinearLayout>
 
@@ -236,7 +243,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:src="@drawable/quesstions" />
+                    android:src="@drawable/quesstion25" />
 
                 <TextView
                     android:id="@+id/show"
@@ -251,7 +258,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/muitentron26" />
+                    android:background="@drawable/arrowblue25" />
 
             </LinearLayout>
 
@@ -265,7 +272,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/update26" />
+                    android:src="@drawable/install25" />
 
                 <TextView
                     android:id="@+id/updateapp"
@@ -280,7 +287,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/muitentron26" />
+                    android:background="@drawable/arrowblue25" />
 
             </LinearLayout>
 
@@ -294,7 +301,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/star26" />
+                    android:src="@drawable/bluestar25" />
 
                 <TextView
                     android:id="@+id/tvvote"
@@ -309,12 +316,36 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/muitentron26" />
+                    android:background="@drawable/arrowblue25" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logout25" />
+
+                <TextView
+                    android:id="@+id/tvlogout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:text="Đăng xuất"
+                    android:textSize="18dp" />
+
 
             </LinearLayout>
 
-
         </LinearLayout>
+
+
 
     </androidx.cardview.widget.CardView>
 

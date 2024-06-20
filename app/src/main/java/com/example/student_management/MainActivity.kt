@@ -21,41 +21,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        var bot=findViewById<BottomNavigationView>(R.id.bottom_nav)
-        bot.setOnNavigationItemSelectedListener { menuItem ->
-           when (menuItem.itemId) {
-                R.id.homeId -> {
-                    replaceFragment(BottomNavigation())
-                    return@setOnNavigationItemSelectedListener true
-                }
-                R.id.studyId -> {
-                    replaceFragment(LearningFragment())
-                    return@setOnNavigationItemSelectedListener true
-                }
-                R.id.profileId -> {
-                    replaceFragment(profile())
-                    return@setOnNavigationItemSelectedListener true
-                }
-
-                else -> false
-            }
-        }
-
-        replaceFragment(BottomNavigation())
-
-
-
-    }
-    private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.allcom, fragment)
-            .commit()
     }
 }

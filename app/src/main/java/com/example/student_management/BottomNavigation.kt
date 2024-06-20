@@ -1,59 +1,96 @@
 package com.example.student_management
 
+import Yasumi
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [BottomNavigation.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BottomNavigation : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var tvsdt: TextView
+    private lateinit var tvname: TextView
+    private lateinit var tvclass: TextView
+    private lateinit var tvphonelist: ImageView
+    private lateinit var imgxinnghi: ImageView
+    private lateinit var diemdanh: ImageView
+    private lateinit var lichhoc: ImageView
+    private lateinit var tvall: TextView
+    private lateinit var imgall: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bottom_navigation, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_bottom_navigation, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BottomNavigation.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BottomNavigation().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        tvsdt = view.findViewById(R.id.tvsdt)
+        tvname = view.findViewById(R.id.tvname)
+        tvclass = view.findViewById(R.id.tvschoolname)
+        tvphonelist = view.findViewById(R.id.tvphonelist)
+        imgxinnghi = view.findViewById(R.id.imgxinnghi)
+        diemdanh = view.findViewById(R.id.diemdanh)
+        lichhoc = view.findViewById(R.id.lichhoc)
+        tvall = view.findViewById(R.id.tvall)
+        imgall = view.findViewById(R.id.imgall)
+
+
+        // Set the same click listener for all ImageView elements
+        val clickListener = View.OnClickListener { v ->
+            when (v.id) {
+                R.id.tvphonelist -> replaceFragment(PhoneNumber())
+                R.id.imgxinnghi -> replaceFragment(Yasumi())
+                R.id.diemdanh -> replaceFragment(Attendancececece_fragment())
+                R.id.lichhoc -> replaceFragment(ScheduleFragment())
+                R.id.tvall->replaceFragment(AllBenefitFragment())
+                R.id.imgall->replaceFragment(AllBenefitFragment())
+
+            }
+        }
+
+        tvphonelist.setOnClickListener(clickListener)
+        imgxinnghi.setOnClickListener(clickListener)
+        diemdanh.setOnClickListener(clickListener)
+        lichhoc.setOnClickListener(clickListener)
+        tvall.setOnClickListener(clickListener)
+        imgall.setOnClickListener(clickListener)
+
+        // Gọi API với token từ SharedPreferences
+        val userService = UserService.create(requireContext())
+        userService.getHomepageData().enqueue(object : Callback<User> {
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                if (response.isSuccessful) {
+                    val userData = response.body()
+
+                    // Cập nhật giao diện với dữ liệu từ API
+                    userData?.let {
+                        tvname.text = it.nameUser
+                        tvsdt.text = it.numberPhone
+                        tvclass.text = it.schoolName
+                    }
+                } else {
+                    Toast.makeText(requireContext(), "Call failed", Toast.LENGTH_SHORT).show()
                 }
             }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                Toast.makeText(requireContext(), "Call Failed", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        return view
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.allcom, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

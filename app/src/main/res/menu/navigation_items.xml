@@ -6,11 +6,11 @@
          android:title="Trang chủ"
          />
     <item android:id="@+id/studyId"
-        android:icon="@drawable/book"
+        android:icon="@drawable/book79"
         android:title="Học tập"
         />
     <item android:id="@+id/profileId"
-        android:icon="@drawable/user"
+        android:icon="@drawable/user70"
         android:title="Cá nhân"
         />
 
